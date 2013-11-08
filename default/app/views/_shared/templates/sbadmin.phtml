@@ -19,12 +19,22 @@
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     
+    <!-- Bootstrap core JavaScript -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <?php echo Tag::js('sbadmin/bootstrap') ?>
+    <?php //echo Html::in ?>
     
   </head>
   
   <body>
 
       <div id="wrapper">
-          Probando
+          <?php View::partial('sbadmin/sidebar') ?>
+          <div id="page-wrapper">
+              <?php View::partial('sbadmin/intro',FALSE,array('titulo' => $titulo, 'subtitulo' => $subtitulo)) ?>
+              <?php View::content() ?>
+              <?php View::partial('sbadmin/footer') ?>
+          </div>
       </div>
+      
   </body>
